@@ -1,0 +1,145 @@
+
+/*
+  WHAT: Styles for the new online books page.
+  WHY: Keep this page's design separate.
+  WHEN: When adding independent pages/components.
+*/
+
+/* Main page container */
+.online-explorer {
+  padding: 10px 0 30px;
+}
+
+/* Page heading */
+.online-explorer h2 {
+  color: #17395b;
+}
+
+/* Search form layout */
+.online-search-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+/* Search input */
+.online-search-form input {
+  flex: 1 1 240px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+}
+
+/* Search button */
+.online-search-form button,
+.online-error button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Current search keyword */
+.online-query {
+  margin: 20px 0;
+  color: #475569;
+}
+
+/* Shared feedback card styling */
+.online-loading,
+.online-error,
+.online-empty {
+  padding: 30px;
+  margin-top: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* Loading state */
+.online-loading {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+/* Error state */
+.online-error {
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+/* Empty results state */
+.online-empty {
+  background: #f8fafc;
+  color: #475569;
+}
+
+/* Responsive book grid */
+.online-book-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+/* Single API book card */
+.online-book-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px #00000010;
+}
+
+/* Book title */
+.online-book-card h3 {
+  color: #17395b;
+  margin-bottom: 12px;
+}
+
+/* Author and year text */
+.online-book-card p {
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* Decorative icon */
+.online-book-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+/* Navigation between two pages */
+.library-navigation {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 24px 0;
+}
+
+/* Navigation buttons */
+.library-navigation button {
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  background: #e2e8f0;
+  color: #17395b;
+  cursor: pointer;
+}
+
+/* Active page button */
+.library-navigation button.active {
+  background: #2563eb;
+  color: white;
+}
+
+/* Keyboard focus styles */
+.library-navigation button:focus-visible,
+.online-search-form input:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 2px;
+}

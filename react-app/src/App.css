@@ -1,0 +1,360 @@
+
+/*
+  WHAT: Main project design.
+  WHY: Style components and create responsive layouts.
+  WHEN: When improving the React user interface.
+*/
+
+/* ===== MAIN APP ===== */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== HEADER ===== */
+
+.header {
+  background-color: #17395b;
+  color: white;
+  text-align: center;
+  padding: 45px 20px;
+}
+
+.header-content {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.header h1 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin: 0 0 12px;
+}
+
+.header p {
+  color: #dbeafe;
+}
+
+/* ===== MAIN CONTAINER ===== */
+
+.container {
+  width: min(100%, 1100px);
+  margin: 0 auto;
+  padding: 30px 20px;
+  flex: 1;
+}
+
+/* ===== LIBRARY SECTION ===== */
+
+.library-section {
+  margin-top: 30px;
+}
+
+.library-section h2 {
+  color: #17395b;
+}
+
+.section-description {
+  color: #64748b;
+}
+
+/* ===== SEARCH ===== */
+
+.search-section {
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+
+.search-section label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* Show keyboard focus clearly */
+.search-input:focus-visible,
+button:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+.search-help {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.result-count {
+  font-weight: bold;
+  margin: 25px 0 15px;
+}
+
+/* ===== BOOK GRID ===== */
+
+.book-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+/* ===== BOOK CARD ===== */
+
+.book-card {
+  background-color: white;
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px #00000012;
+  transition: transform 0.2s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-4px);
+}
+
+.book-card h3 {
+  color: #17395b;
+  margin-top: 15px;
+}
+
+.book-card p {
+  color: #475569;
+  font-size: 14px;
+}
+
+.book-icon {
+  font-size: 32px;
+  background-color: #eff6ff;
+  width: fit-content;
+  padding: 12px;
+  border-radius: 10px;
+}
+
+/* ===== BOOK STATUS ===== */
+
+.book-status {
+  display: inline-block;
+  padding: 7px 12px;
+  margin-top: 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.available {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.borrowed {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+/* ===== EMPTY SEARCH ===== */
+
+.empty-message {
+  text-align: center;
+  color: #64748b;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+/* ===== INFORMATION CARDS ===== */
+
+.info-card {
+  background-color: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px #00000010;
+  margin-bottom: 25px;
+}
+
+.info-card h2 {
+  margin-top: 0;
+  color: #17395b;
+}
+
+/* ===== CLOCK ===== */
+
+.clock-time {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2563eb;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ===== STUDY TIMER ===== */
+
+.study-timer {
+  margin-top: 35px;
+  text-align: center;
+}
+
+.timer-time {
+  font-size: 40px;
+  font-weight: bold;
+  color: #17395b;
+  font-variant-numeric: tabular-nums;
+}
+
+.timer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* ===== BUTTONS ===== */
+
+button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+.reset-button {
+  background-color: #64748b;
+}
+
+.reset-button:hover {
+  background-color: #475569;
+}
+
+/* ===== FOOTER ===== */
+
+.footer {
+  background-color: #17395b;
+  color: white;
+  text-align: center;
+  padding: 22px;
+  margin-top: 35px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media (max-width: 600px) {
+  .header {
+    padding: 30px 15px;
+  }
+
+  .container {
+    padding: 20px 15px;
+  }
+
+  .book-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/*
+  STEP 5: Book filter styles
+*/
+
+/* Checkbox and label */
+.filter-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 18px 0;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Checkbox appearance */
+.filter-label input {
+  width: 18px;
+  height: 18px;
+  accent-color: #2563eb;
+  cursor: pointer;
+}
+
+/* Message when available filter is active */
+.filter-message {
+  background: #eff6ff;
+  color: #1e40af;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* Borrowed book information */
+.borrowed-message {
+  color: #92400e;
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+/* Empty state */
+.empty-message {
+  background: white;
+  padding: 35px;
+  text-align: center;
+  border-radius: 12px;
+  border: 1px dashed #cbd5e1;
+}
+
+.empty-message h3 {
+  color: #17395b;
+}
+
+.empty-message p {
+  color: #64748b;
+}
+
+
+/* Add Book page */
+.add-book-page {
+  max-width: 550px;
+  margin: 20px auto;
+  padding: 25px;
+  background: white;
+  border-radius: 12px;
+}
+
+/* Form labels and inputs */
+.add-book-page label {
+  display: block;
+  margin: 15px 0 6px;
+  font-weight: bold;
+}
+
+.add-book-page input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+}
+
+/* Validation error */
+.field-error {
+  color: #b91c1c;
+  font-size: 13px;
+  margin: 5px 0;
+}
+
+/* Submit button */
+.add-book-page button {
+  margin-top: 20px;
+}
+
+/* Successful validation */
+.form-success {
+  color: #166534;
+  margin-top: 15px;
+}

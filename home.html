@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"  />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    form{
+        background-color: aqua;
+        text-align: center;
+        align-items: center;
+        padding: 50px;
+        margin: 30px;
+        border-radius: 30px;
+    }
+    label{
+        padding: 10px;
+        margin-top: 5px;
+       
+    }
+    input{
+        margin: 10px;
+         border-radius: 30px;
+    }
+    button:hover{
+            background-color: blue;
+
+    }
+    h2{
+        text-align: center;
+    }
+    .regitraiton{
+        margin-left: 50px;
+        position: relative;
+        flex: auto;
+    }
+     
+  </style>
+  <body>
+
+   <section id="regitraiton">
+     <h2> فرم ثبت نام</h2>
+    <Form>
+       
+         <label >نام صنف <input name="class" placeholder="ClassName">  </label>
+        <label> نام معلم <input name="teacher"  placeholder="Teacher">  </label>
+         <label> تایم صنف <input name="time" placeholder="Time">  </label>
+         <button name="submit"> معلومات خود را ثبت کنید </button>
+    </Form>
+   </section>
+
+
+
+
+
+
+    <script>
+      function averageAttendance(days) {
+        let total = 0;
+        for (let i = 0; i < days.length; i++) {
+          total += days[i];
+        }
+        return total / days.length;
+      }
+      console.log(averageAttendance([10, 12, 8]));
+    </script>
+  </body>
+</html>
+<!-- // کد قرار است اوسط حاضری روزانه را حساب کند، اما جواب NaN می‌دهد. خطا را پیدا و اصلاح کنید. -->

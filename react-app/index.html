@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!--
+      WHAT: Defines character encoding.
+      WHY: Supports different letters and symbols.
+      WHEN: Required for most modern websites.
+    -->
+    <meta charset="UTF-8" />
+
+    <!--
+      WHAT: Controls mobile screen scaling.
+      WHY: Makes the page responsive.
+      WHEN: Required for mobile-friendly websites.
+    -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <!--
+      WHAT: Sets the browser tab icon.
+      WHY: Gives our library its own identity.
+      WHEN: When adding a website favicon.
+    -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/book.svg"
+    />
+
+    <!--
+      WHAT: Sets the initial browser tab title.
+      WHY: Users can identify the website.
+      WHEN: Before React runs or updates the title.
+    -->
+    <title>Kabul Community Library</title>
+  </head>
+
+  <body>
+    <!--
+      WHAT: Root container for React.
+      WHY: React needs an HTML element to render into.
+      WHEN: In every normal Vite React application.
+    -->
+    <div id="root"></div>
+
+    <!--
+      WHAT: Loads the React application's entry file.
+      WHY: Starts the JavaScript application.
+      WHEN: When the browser loads the website.
+    -->
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
