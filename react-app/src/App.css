@@ -172,6 +172,10 @@ button:focus-visible {
 
 /* ===== INFORMATION CARDS ===== */
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+
 .info-card {
   background-color: white;
   padding: 25px;
@@ -357,4 +361,116 @@ button:hover {
 .form-success {
   color: #166534;
   margin-top: 15px;
+}
+
+/* ===== REDUCER LAB ===== */
+
+/* Main page */
+.reducer-lab {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.reducer-lab h2 {
+  color: #17395b;
+}
+
+/* Search and filter controls */
+.reducer-controls {
+  background: #eff6ff;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+.reducer-controls > label,
+.reducer-add-form > label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.reducer-controls > input,
+.reducer-add-form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+}
+
+/* Filter checkbox */
+.reducer-checkbox {
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+/* Add book form */
+.reducer-add-form {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+.reducer-add-form button {
+  margin-top: 12px;
+}
+
+.reducer-add-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Book cards */
+.reducer-book-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.reducer-book-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.reducer-book-card h3 {
+  color: #17395b;
+}
+
+.reducer-book-card p {
+  color: #64748b;
+}
+
+/* Selected book */
+.reducer-selected {
+  background: #dbeafe;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 25px;
+}
+
+/* Feedback and empty states */
+.reducer-message {
+  background: #dcfce7;
+  color: #166534;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.reducer-empty {
+  padding: 20px;
+  text-align: center;
+}
+
+.reducer-reset {
+  background: #64748b;
+  margin-top: 10px;
 }

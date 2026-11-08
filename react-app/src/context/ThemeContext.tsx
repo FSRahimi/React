@@ -1,50 +1,54 @@
-
 import {
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-  type ReactNode,
+    createContext,
+    useState,
+    useEffect,
+    useContext,     
+
 } from "react";
+import type { ReactNode } from "react";
+
+
 
 export type Theme = "light" | "dark";
 
-type ThemeContextValue = {
-  theme: Theme;
-  toggleTheme: () => void;
+type ThemeContextType = {
+    theme: Theme;
+    toggleTheme: () => void;
 };
 
-const ThemeContext = createContext<ThemeContextValue | null>(null);
+const ThemeContext = createContext<ThemeContextType | null>(null);
 
-export function useTheme(): ThemeContextValue {
-  const context = useContext(ThemeContext);
+// The context hook must be exported alongside the provider from this module.
+// eslint-disable-next-line react-refresh/only-export-components
+export function useTheme(): ThemeContextType {
+    const context = useContext(ThemeContext);
 
-  if (context === null) {
-    throw new Error("useTheme must be used inside ThemeProvider");
-  }
+    if(context === null) {
+        throw new Error("useTheme must be used inside ThemeProvider")
+    }
 
-  return context;
+    return context;
 }
 
-export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("light");
 
-  useEffect(() => {
-    document.documentElement.classList.toggle(
-      "dark",
-      theme === "dark"
+export function ThemeProvider({
+    children,
+}: {
+    children: ReactNode;
+}) {
+    const [theme, setTheme] = useState<Theme>("light");
+
+    useEffect(() => {
+        document.documentElement.classList.toggle("dark", theme === "dark");
+    }, [theme]);
+
+    const toggleTheme = () => {
+        setTheme((currentTheme) => (currentTheme === "light" ? "dark" : "light"));
+    };
+
+    return (
+        <ThemeContext.Provider value={{ theme, toggleTheme }}>
+            {children}
+        </ThemeContext.Provider>
     );
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme((current) =>
-      current === "light" ? "dark" : "light"
-    );
-  };
-
-  return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  );
 }

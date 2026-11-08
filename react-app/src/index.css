@@ -3,7 +3,6 @@
   WHY: Apply consistent styles to the whole project.
   WHEN: Every page needs shared base styling.
 */
-
 /* Consistent box sizing */
 * {
   box-sizing: border-box;
@@ -27,3 +26,5 @@ button,
 input {
   font: inherit;
 }
+
+@custom-variant dark (&:where(.dark, .dark *));
